@@ -66,6 +66,7 @@ body {
     margin-top: 0.6em;
     font-size: 1.5em;
     color: #969CA1;
+    cursor: pointer;
 }
 
 /*MAIN*/
@@ -80,14 +81,14 @@ main {
 aside {
     background-color: rgb(33, 37, 41);
     width: 25rem;
-    height: 55.05rem;
-    /*padding: 1em 5em 20em 0;*/
+    height: 61.6rem;
 }
 
 .nav__ul li {
+    position: relative;
     list-style: none;
     color: #969CA1;
-    margin: 2em 0 0 0;
+    margin: 2em 0.4rem 0 0;
     font-size: 1.25em;
 }
 
@@ -108,10 +109,30 @@ aside {
 .nav__ul li .fa {
     margin-right: 1rem;
     position: relative;
-    right: 2;
 }
 
-/*Ez itt ami fog történni valami borzasztó*/
+.nav__ul {
+    position: relative;
+}
+
+.nav__ul .fa-angle-right {
+    position: absolute;
+    right: 1.5rem;
+    color: #969CA1;
+    font-weight: bold;
+}
+
+.arrowLayouts {
+    position: absolute;
+    top: 12.2rem;
+}
+
+.arrowPages {
+    position: absolute;
+    top: 16.2rem;
+}
+
+/*Ez itt ami fog történni valami borzasztó
 
 body > main > aside > nav > ul > li:nth-child(4) > i {
     position: relative;
@@ -126,7 +147,7 @@ body > main > aside > nav > ul > li:nth-child(5) > i {
     font-weight: bold;
 }
 
-/*Megmondtam...*/
+Megmondtam...*/
 
 /*MAIN__SECTION*/
 
@@ -160,18 +181,22 @@ body > main > aside > nav > ul > li:nth-child(5) > i {
 
 .main__card--blue {
     background-color: rgb(0, 123, 255);
+    background: linear-gradient(to bottom, #007bff 57%, #0066ff 56%);
 }
 
 .main__card--yellow {
     background-color: rgb(255, 193, 7);
+    background: linear-gradient(to bottom, #ffc107 57%, #F8BA06 56%);
 }
 
 .main__card--green {
     background-color: rgb(40, 167, 69);
+    background: linear-gradient(to bottom, #28a745 57%, #009933 56%);
 }
 
 .main__card--red {
     background-color: rgb(220, 53, 69);
+    background: linear-gradient(to bottom, #dc3545 57%, #cc0000 56%);
 }
 
 .card__top {
@@ -187,6 +212,7 @@ body > main > aside > nav > ul > li:nth-child(5) > i {
 }
 
 .card__bottom {
+    position: relative;
     border-radius: 0 0 .25rem .25rem;
     margin-top: 1rem;
     padding: 1.5rem 1rem 0 1.5rem;
@@ -200,12 +226,73 @@ body > main > aside > nav > ul > li:nth-child(5) > i {
 }
 
 .card__bottom .fa {
-    position: relative;
-    position: relative;
-    left: 12rem;
+    position: absolute;
+    right: 1rem;
     font-weight: bold;
 }
 
-@media only screen and (max-width: 700px) {
-
+.nav__ul--mobile {
+    display: none;
 }
+
+/*KISEBB MÉRET ÉS TELEFONHOZ TARTOZÓ BEÁLLÍTÁSOK*/
+
+@media only screen and (max-width: 1350px) {
+
+    .main__cards {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 25rem;
+    }
+}
+
+@media only screen and (max-width: 970px) {
+    .nav__ul .fa-angle-right {
+        display: none;
+    }
+    .fa-bars {
+        display: none;
+    }
+    .nav__ul li .fa {
+        display: none;
+    }
+}
+
+    @media only screen and (max-width: 700px) {
+        .header--dark {
+            background-color: rgb(51, 57, 64);
+            color: rgb(236, 236, 236);
+            height: 3.5rem;
+        }
+       
+        aside {
+            background-color: rgb(33, 37, 41);
+            width: 3rem;
+            height: 55.05rem;
+        }
+        .nav__ul li {
+            display: none;
+            margin-bottom: 2rem;
+        }
+        .nav__ul--mobile {
+            display: inline-block;
+            position: absolute;
+            left: -2rem;
+            list-style: none;
+            color: #969CA1;
+            font-size: 1.25em;
+            margin: 2em 0.4rem 0 0;
+        }
+    
+        .nav__ul--mobile li {
+        position: relative;
+        color: #969CA1;
+        margin: 2.2em 0.4rem 0 0;
+        }
+        .main__cards {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
