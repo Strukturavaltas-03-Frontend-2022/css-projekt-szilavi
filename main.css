@@ -208,7 +208,7 @@ Megmondtam...*/
 }
 
 .card__top:hover {
-    color: #000000;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .card__bottom {
@@ -222,7 +222,7 @@ Megmondtam...*/
 }
 
 .card__bottom:hover {
-    color: #E8ECEF;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .card__bottom .fa {
