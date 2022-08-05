@@ -12,52 +12,33 @@ body {
 .header--dark {
     background-color: rgb(51, 57, 64);
     color: rgb(236, 236, 236);
+    position: relative;
     height: 3.5rem;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.header__left--flexbox {
-    margin-left: 1rem;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.header__right--flexbox {
-    margin-right: 1rem;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.header__search--flexbox {
-    margin-right: 1rem;
-
 }
 
 .header__title {
     display: inline;
+    position: absolute;
     font-size: 1.25rem;
-    margin-right: 15rem;
+    margin: 0.7em;
 }
 
-.header__bar {
+.fa-bars {
     color: #969CA1;
+    display: inline;
+    position: absolute;
+    left: 20rem;
     font-size: 1.5rem;
+    margin: 0.7em;
 }
 
 .header__search {
     display: inline;
+    position: absolute;
+    right: 4em;
+    margin-top: 0.5em;
+    margin-right: 1em;
 }
-
 
 .search__input {
     border-radius: 4px 0 0 4px;
@@ -82,15 +63,11 @@ body {
     margin-left: -0.21em;
 }
 
-.header__search--flexbox {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .header__user {
+    display: inline;
+    position: absolute;
+    right: 1rem;
+    margin-top: 0.6em;
     font-size: 1.5em;
     color: #969CA1;
     cursor: pointer;
@@ -186,8 +163,8 @@ aside {
 }
 
 .main__card {
-    border-radius: 0.25rem;
     margin: 1rem;
+    border-radius: 5%;
     color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
@@ -250,30 +227,19 @@ aside {
 }
 
 .card__top {
-    border-radius: 0.25rem 0.25rem 0 0;
     padding: 2.5rem;
     font-size: 1.5rem;
     cursor: pointer;
-    transform: backgorund-color 0.3s;
-}
-
-.card__top:hover {
-    transform: backgorund-color(rgba(0 0 0 0.1));
 }
 
 .card__bottom {
-    border-radius: 0 0 0.25rem 0.25rem;
     padding: 1.5rem;
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    transform: backgorund-color 0.3s;
-}
 
-.card__top:hover {
-    transform: backgorund-color(rgba(255 255 255 0.5));
 }
 
 .card__bottom .fa {
@@ -285,7 +251,9 @@ aside {
     display: none;
 }
 
+
 /*KISEBB MÉRET ÉS TELEFONHOZ TARTOZÓ BEÁLLÍTÁSOK*/
+
 
 @media screen and (max-width: 1350px) {
     .main__card {
@@ -297,12 +265,10 @@ aside {
     .nav__ul .fa-angle-right {
         display: none;
     }
-
-    .nav__ul li .fa {
+    .fa-bars {
         display: none;
     }
-
-    .header__bar--flexbox {
+    .nav__ul li .fa {
         display: none;
     }
 }
@@ -313,72 +279,63 @@ aside {
     }
 }
 
-@media only screen and (max-width: 700px) {
-
-    aside {
-        background-color: rgb(33, 37, 41);
-        width: 3rem;
-        height: 55.05rem;
-    }
-
-    .nav__ul li {
-        display: none;
-        margin-bottom: 2rem;
-    }
-
-    .nav__ul--mobile {
-        display: inline-block;
-        position: absolute;
-        left: -2rem;
-        list-style: none;
-        color: #969CA1;
-        font-size: 1.25em;
-        margin: 2em 0.4rem 0 0;
-    }
-
-    .nav__ul--mobile li {
+    @media only screen and (max-width: 700px) {
+        .header--dark {
+            background-color: rgb(51, 57, 64);
+            color: rgb(236, 236, 236);
+            height: 3.5rem;
+        }
+       
+        aside {
+            background-color: rgb(33, 37, 41);
+            width: 3rem;
+            height: 55.05rem;
+        }
+        .nav__ul li {
+            display: none;
+            margin-bottom: 2rem;
+        }
+        .nav__ul--mobile {
+            display: inline-block;
+            position: absolute;
+            left: -2rem;
+            list-style: none;
+            color: #969CA1;
+            font-size: 1.25em;
+            margin: 2em 0.4rem 0 0;
+        }
+    
+        .nav__ul--mobile li {
         position: relative;
         color: #969CA1;
         margin: 2.2em 0.4rem 0 0;
+        }
+        .main__cards {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
     }
 
-    .header--dark {
-        background-color: rgb(51, 57, 64);
-        color: rgb(236, 236, 236);
-        height: 3.5rem;
+    @media only screen and (max-width: 520px) {
+        .search__input {
+            display: none;
+        }
+    
+        .search__btn {
+            border-radius: 15%;
+        }
     }
-
-    .header__left--flexbox {
-        margin-left: 1rem;
-        display: flex;
-        flex-wrap: nowrap;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .header__title {
-        margin-right: 0rem;
-    }
-}
-
-@media only screen and (max-width: 430px) {
-    .search__input {
-        display: none;
-    }
-
-    .search__btn {
-        border-radius: 15%;
-    }
-}
 
 /*Animáció*/
 
 @keyframes shine {
-    0% {
-      background-position: -20rem;    
-    }
-    100% {
-      background-position: 100rem;   
-    }
-  }
+        0% {
+          background-position: -20rem;    
+        }
+        100% {
+          background-position: 100rem;   
+        }
+      }
+
+
